@@ -1,0 +1,2014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toobah - Responsive Header</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+
+
+
+
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* overflow-y: hidden; */
+            /* outline: 1px solid red; Helps spot overflow */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .top-header {
+            background: #529892;
+            color: white;
+            padding: 10px 0;
+            font-size: 20px;
+            line-height: 150%;
+
+            font-family: 'DM Sans', sans-serif;
+            margin: 0;
+            font-weight: 200;
+        }
+
+        .top-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .shipping-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .shipping-info i {
+            font-size: 18px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .phone-number {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .language-currency {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .dropdown-toggle {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+        }
+
+        .dropdown-toggle:hover {
+            opacity: 0.8;
+        }
+
+        .main-nav {
+            background: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #5fb3b3;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .search-container {
+            position: relative;
+            flex: 1;
+            max-width: 500px;
+        }
+
+        .search-form {
+            display: flex;
+             border: 1px solid #529892;
+            border-radius: 15px;
+            overflow: hidden;
+            background: white;
+        }
+
+        .category-dropdown {
+            background: transparent;
+            border: none;
+            padding: 12px 20px;
+            /* border-right: 1px solid #e0e0e0; */
+            outline: none;
+            cursor: pointer;
+            min-width: 140px;
+            font-weight: 500;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 2px;
+        }
+
+        .search-input {
+            flex: 1;
+            border: none;
+            padding: 12px 20px;
+            outline: none;
+            font-size: 14px;
+            min-width: 0;
+            font-family: 'Poppins', sans-serif;
+
+        }
+
+        .search-input::placeholder {
+            color: #999;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+
+        }
+
+        .search-btn {
+            background: transparent;
+            border: none;
+            padding: 12px 20px;
+            color: rgb(5, 5, 5);
+            cursor: pointer;
+            /* transition: background 0.3s; */
+            white-space: nowrap;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: 40px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            font-size: 18px;
+            transition: color 0.3s;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: #5fb3b3;
+        }
+
+        .header-icons {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .icon-link {
+            color: #333;
+            font-size: 20px;
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .icon-link:hover {
+            color: #5fb3b3;
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #5fb3b3;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .custom-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 120px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+           
+            border-radius: 5px;
+            z-index: 1000;
+            top: 100%;
+            right: 0;
+        }
+
+        .dropdown-content a {
+            color: #333;
+            padding: 8px 12px;
+            text-decoration: none;
+            display: block;
+            font-size: 13px;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+            color: #5fb3b3;
+        }
+
+        .custom-dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+
+
+        .mobile-menu {
+            background: white;
+            border-top: 1px solid #e0e0e0;
+            display: none;
+        }
+
+        .mobile-menu.show {
+            display: block;
+        }
+
+        .mobile-menu .nav-menu {
+            flex-direction: column;
+            gap: 0;
+            /* padding: 20px; */
+        }
+
+        .mobile-menu .nav-menu li {
+            width: 100%;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .mobile-menu .nav-menu a {
+            display: block;
+            /* padding: 15px 0; */
+            width: 100%;
+        }
+
+
+        @media (max-width: 1200px) {
+            .top-header {
+                font-size: 12px;
+                padding: 8px 0;
+            }
+
+            .header-right {
+                gap: 10px;
+            }
+
+            /* .phone-number {
+                display: none;
+            } */
+
+            .main-nav {
+                padding: 10px 0;
+            }
+
+            .logo {
+                font-size: 24px;
+                flex-shrink: 0;
+            }
+
+            .search-container {
+                flex: 1;
+                max-width: none;
+                margin: 0 15px;
+            }
+
+            .category-dropdown {
+                display: none;
+            }
+
+            .search-input {
+                padding: 10px 15px;
+                font-size: 13px;
+            }
+
+            .search-btn {
+                padding: 10px 15px;
+            }
+
+            .search-btn span {
+                display: none;
+            }
+
+            .header-icons {
+                gap: 15px;
+                flex-shrink: 0;
+            }
+
+            .navbar-toggler {
+                border: none;
+                padding: 4px 6px;
+                background: none;
+                flex-shrink: 0;
+            }
+
+            .navbar-toggler:focus {
+                box-shadow: none;
+            }
+
+            .mobile-toggle{
+                /* border: 1px solid #529892; */
+                /* background-color: #71cac3; */
+                color: rgb(14, 14, 14);
+                border: none;
+                border-radius: 2px;
+                width: 50px;
+                opacity: 1;
+
+            }
+            .mobile-toggle:hover{
+                background-color: #529892;
+            }
+
+            .navbar-toggler-icon {
+                width: 30px;
+                height: 20px;
+            }
+
+
+            .desktop-nav {
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .logo { 
+                width: 45px;
+                
+             }
+
+            .search-container {
+                margin: 0 10px;
+            }
+
+            .language-currency {
+                gap: 5px;
+            }
+
+            /* .language-currency span {
+                display: none;
+            } */
+
+
+            .header-icons {
+                gap: 5px;
+            }
+
+            .header-right img{
+                display: none;
+            }
+        }
+
+ 
+        
+
+
+
+
+        /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+
+        /* .hero {
+            height: 660px;
+            width: 100%;
+            background: url('image (7).png') ;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative; 
+            border-bottom-right-radius: 150px;
+            border-bottom-left-radius: 150px;
+
+            } */
+
+
+
+        .hero-section {
+            min-height: 100vh;
+            /* background: linear-gradient(135deg, #1a5f5f 0%, #2d8b8b 50%, #40b5b5 100%); */
+            color: white;
+            background: url('images/image\ \(7\).png') ;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative; 
+            border-bottom-right-radius: 150px;
+            border-bottom-left-radius: 150px;
+            height: 660px;
+            width: 100%;
+        }
+
+        .hero-title {
+            font-size: 76px;
+            font-weight: 400;
+            /* letter-spacing: 2px; */
+            line-height: 1.2;
+            margin-bottom: 3rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-family: 'Volkhov', serif;
+        }
+
+        .dropdown-button {
+            background: transparent;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            /* padding: 1rem 0.1rem; */
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: white;
+            font-weight: 500;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .dropdown-menu {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-top: 0.5rem;
+        }
+
+        .dropdown-item {
+            color: #333;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            margin: 0.25rem;
+        }
+
+        .dropdown-item:hover {
+            background: rgba(255, 255, 255, 0.8);
+            color: #333;
+        }
+
+        /* .flag-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: linear-gradient(to right, #00732f 33%, white 33%, white 66%, #ce1126 66%);
+            position: relative;
+        } */
+
+        /* .flag-icon::after {
+            content: '';
+            position: absolute;
+            left: 33%;
+            top: 0;
+            width: 34%;
+            height: 100%;
+            background: black;
+        } */
+
+
+        .shop-button-container {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .shop-button {
+            background: transparent;
+            /* backdrop-filter: blur(10px); */
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            padding: 1rem 3rem;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .shop-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+            color: white;
+            text-decoration: none;
+        }
+
+        .arrow-icon {
+            background: #40b5b5;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            position: absolute;
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 2;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .shop-button-container:hover .arrow-icon {
+            background: #2d8b8b;
+            transform: translateY(-50%) translateX(5px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .hero-title {
+                font-size: 3.8rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 3.2rem;
+                margin-bottom: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+                letter-spacing: 1px;
+                margin-bottom: 2rem;
+            }
+            
+            .shop-button {
+                padding: 0.9rem 2.5rem;
+                font-size: 1rem;
+            }
+
+            .arrow-icon {
+                width: 45px;
+                height: 45px;
+                right: -25px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2rem;
+                line-height: 1.3;
+            }
+            
+            .dropdown-button {
+                font-size: 0.85rem;
+
+            }
+
+            .hero-section{
+                height: 510px;
+                min-height: 50px;
+                border-bottom-right-radius: 100px;
+                border-bottom-left-radius: 100px;
+
+
+            }
+        }
+
+        @media (max-width: 400px) {
+            .hero-title {
+                font-size: 1.7rem;
+            }
+            
+            .shop-button {
+                padding: 0.7rem 2rem;
+                font-size: 0.95rem;
+            }
+
+
+            .hero-section{
+                height: 560px;
+                min-height: 50px;
+
+            }
+        }
+
+
+
+
+        /* footer????????????????????????????????????????/ */
+
+        .footer{
+            background-color: #225D58;
+            font-family: 'Outfit', sans-serif;
+        }
+
+.footer .social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgb(248, 247, 247);
+    border-radius: 50%;
+    text-decoration: none;
+    color: white; /* icon color default white */
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.footer .social a:hover {
+    background-color: white; /* on hover: white bg */
+    color: black; /* icon color turns black */
+}
+
+
+
+.footer-column h6 {
+    margin-bottom: 1rem;
+    line-height: 1.8; /* Good line height for headings */
+  }
+
+  .footer-column ul li {
+    margin-bottom: 0.5rem; /* spacing between items */
+    color: grey;
+
+  }
+
+  .footer-column a {
+    line-height: 1.8; /* readable line height for links */
+    display: inline-block;
+    transition: color 0.2s ease-in-out;
+    color: rgb(165, 164, 164);
+  }
+
+  .footer-column a:hover {
+    color: #fdfcfb; /* subtle hover effect */
+  }
+
+
+
+  /* TEstimonial???????????????????????????? */
+
+
+
+  .testimonial-head h1{
+
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+           
+            font-size: clamp(28px, 6vw, 65px);
+}
+
+
+
+.carousel-item {
+            padding: 0 50px;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .testimonial-card.featured:hover {
+            transform: translateY(-5px);
+        }
+        
+        .testimonial-card.featured {
+            background: #1A9C91;
+            color: white;
+            transform: scale(1);
+            z-index: 2;
+            position: relative;
+
+
+
+
+        }
+        
+        .stars {
+            color: #ffc107;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-text {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 300;
+            flex-grow: 1;
+        }
+        
+        .client-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .client-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .client-details h5 {
+            margin: 0;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        
+        .client-details p {
+            margin: 0;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 5%;
+            color: #26a69a;
+        }
+        
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: #26a69a;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+        
+        .carousel-indicators {
+            bottom: -50px;
+        }
+        
+        .carousel-indicators button {
+            background-color: #26a69a;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin: 0 5px;
+        }
+        
+@media (max-width: 991px) {
+    .carousel-item .col-lg-4:not(:first-child) {
+        display: none;
+    }
+    
+    .carousel-item .col-lg-4 {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .testimonial-card {
+        margin-bottom: 30px;
+    }
+    
+    .testimonial-card.featured {
+        transform: none;
+    }
+    
+    .carousel-item {
+        padding: 0 20px;
+    }
+    
+    /* Hide carousel indicators on smaller screens */
+    .carousel-indicators {
+        display: none;
+    }
+    
+    /* Adjust carousel controls for smaller screens */
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 8%;
+    }
+    
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 10%;
+    }
+    
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .carousel-item {
+        padding: 0 10px;
+    }
+}
+
+        
+
+
+
+/* PRoductssss??????????????????????????? */
+
+
+
+.most-popular-section {
+    padding: 60px 0;
+    background-color: white;
+}
+
+.most-popular-section .section-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    padding-left: 15px;
+}
+
+.most-popular-section .section-title h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-family: 'Volkhov', serif;
+}
+
+.most-popular-section .section-description {
+    font-size: 1rem;
+    color: #6c757d;
+    line-height: 1.6;
+    max-width: 500px;
+    font-family: 'Outfit', sans-serif;
+}
+
+.most-popular-section .view-more-btn {
+    background: #529892;
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.most-popular-section .view-more-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(38, 166, 154, 0.4);
+    color: white;
+}
+
+.most-popular-section .products-container {
+    position: relative;
+    overflow: hidden;
+    padding-left: 15px;
+    margin-left: 100px;
+    font-family: 'Libre Baskerville', serif;
+}
+
+.most-popular-section .products-scroll {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding-bottom: 10px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.most-popular-section .products-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.most-popular-section .product-card {
+    flex: 0 0 280px;
+    background: white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(81, 80, 80, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e9ecef;
+    display: flex;
+    flex-direction: column;
+}
+
+.most-popular-section .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.most-popular-section .product-image {
+    min-height: 250px;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.most-popular-section .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.most-popular-section .product-info {
+    padding: 20px;
+}
+
+.most-popular-section .product-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+
+.most-popular-section .brand-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.most-popular-section .brand-name {
+    font-size: 0.9rem;
+    color: #272727;
+    margin: 0;
+    font-weight: 400;
+}
+
+.most-popular-section .rating {
+    display: flex;
+    align-items: center;
+    /* gap: 2px; */
+}
+
+.most-popular-section .rating-stars {
+    color: #545453;
+    font-size: 0.8rem;
+}
+
+.most-popular-section .rating-text {
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.most-popular-section .price-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.most-popular-section .current-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.most-popular-section .original-price {
+    font-size: 0.9rem;
+    color: #6c757d;
+    text-decoration: line-through;
+}
+
+.most-popular-section .discount {
+    color: rgb(6, 80, 5);
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1199px) {
+    .most-popular-section .product-card {
+        flex: 0 0 360px;
+    }
+}
+
+@media (max-width: 991px) {
+    .most-popular-section .section-header {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+    }
+
+    .most-popular-section .section-title h2 {
+        font-size: 2.2rem;
+    }
+
+    .most-popular-section .product-card {
+        flex: 0 0 300px;
+    }
+}
+
+@media (max-width: 767px) {
+    .most-popular-section .section-title h2 {
+        font-size: 1.8rem;
+    }
+
+    .most-popular-section .product-card {
+        flex: 0 0 300px;
+    }
+
+    .most-popular-section .products-container {
+        padding-left: 10px;
+    }
+
+    .most-popular-section .section-header {
+        padding-left: 10px;
+    }
+}
+
+@media (max-width: 575px) {
+    .most-popular-section .product-card {
+        flex: 0 0 300px;
+    }
+
+    .most-popular-section .product-image {
+        height: auto;
+        background: none;
+        /* padding: 10px; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .most-popular-section .product-image img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .most-popular-section .product-info {
+        padding: 15px;
+    }
+
+    .most-popular-section .section-title h2 {
+        font-size: 1.6rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .showcase-section {
+            padding: 80px 0;
+            background-color:#C7D8B72B;
+        }
+        
+        .showcase-section .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            font-family: 'Volkhov', serif;
+        }
+        
+        .showcase-section .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            line-height: 1.2;
+            margin-bottom: 0;
+        }
+        
+        .showcase-section .highlight-text {
+            background-color: #B2E6E2;
+            padding: 0px 5px 1px 10px ;
+            border-radius: 30px;
+            margin-top: 3px;
+        }
+        
+        .showcase-section .product-grid {
+            margin-bottom: 50px;
+        }
+        
+        .showcase-section .product-item {
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            
+        }
+        
+        .showcase-section .product-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+        }
+        
+        .showcase-section .product-image {
+            width: 100%;
+            height: 470px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            /* color: #666; */
+            
+            position: relative;
+        }
+         
+        
+        .showcase-section .view-more-btn {
+            background: #529892;
+            border: none;
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(38, 166, 154, 0.3);
+            transition: 1.5s;
+        }
+        
+        .showcase-section .view-more-btn:hover {
+            background: linear-gradient(135deg, #00897b 0%, #8de7de 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(38, 166, 154, 0.4);
+            color: white;
+   
+        }
+        
+        .showcase-section .btn-container {
+            text-align: center;
+        }
+
+
+
+        @media (max-width: 991px) {
+    .showcase-section .product-item {
+        background: none !important;
+        box-shadow: none;
+        border-radius: 0;
+    }
+    
+    .showcase-section .product-image {
+        border-radius: 15px;
+    }
+}
+        
+        /* Responsive adjustments */
+        /* @media (max-width: 1199px) {
+            .product-image {
+                height: 400px;
+            }
+        }
+        
+        @media (max-width: 991px) {
+            .product-image {
+                height: 350px;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .product-image {
+                height: 300px;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .showcase-section {
+                padding: 60px 0;
+            }
+            
+            .product-item {
+                margin-bottom: 20px;
+            }
+        }
+        
+        @media (max-width: 575px) {
+            .product-image {
+                height: 250px;
+            }
+            
+            .section-title h2 {
+                font-size: 1.6rem;
+                padding: 0 15px;
+            }
+        } */
+        
+        /* Desktop specific width control */
+        /* @media (min-width: 1200px) {
+            .product-item {
+                max-width: 350px;
+                margin: 0 auto 30px;
+            }
+        } */
+
+
+        @media (max-width: 575px) {
+    .showcase-section .product-image {
+        height: auto; /* Let the image height adapt */
+        text-align: center; /* Optional: center image */
+    }
+
+    .showcase-section .product-image img {
+        max-width: 50%;
+        height: auto;
+        object-fit: contain; /* ensures no cropping */
+    }
+
+    .showcase-section .section-title h2 {
+        font-size: 1.6rem;
+        padding: 0 15px;
+    }
+}
+
+
+        
+    </style>
+</head>
+<body>
+    <!-- Top Header -->
+    <div class="top-header ">
+        <div class="container ">
+            <div class="shipping-info">
+                <img src="images/truck.png" height="30px" width="30px" alt="">
+                <span>Free Shipping and Free Return</span>
+            </div>
+            <div class="header-right">
+                <div class="phone-number">
+                    <span class="me-2">+62 864 6444 2222</span>
+                    <img src="images/Line 2.png" height="15px" alt="">
+                </div>
+                <div class="language-currency">
+                    <div class="custom-dropdown">
+                        <button class="dropdown-toggle">
+                            <img src="images/united-states 1.png" height="22px" width="22px"  alt="">
+                            <span>English</span>
+                            
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="#"><i class="fas fa-flag-usa"></i> English</a>
+                            <a href="#"><i class="fas fa-flag"></i> Bahasa</a>
+                        </div>
+                    </div>
+                    <div class="custom-dropdown">
+                        <button class="dropdown-toggle">
+                            <span>$ USD</span>
+                            <!-- <i class="fas fa-chevron-down"></i> -->
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="#">$ USD</a>
+                            <a href="#">€ EUR</a>
+                            <a href="#">£ GBP</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <div class="main-nav">
+        <div class="container pb-2 ">
+            <div class="d-flex align-items-center w-100">
+                <!-- Logo -->
+                <img src="images/Toobah_Logo 1.png" class="img-fluid me-lg-5 logo" width="135px" alt="">
+ 
+                <!-- Search Bar -->
+                <div class="search-container me-lg-5">
+                    <form class="search-form">
+                        <select class="category-dropdown  d-none d-xxl-block">
+                            <option>All Categories</option>
+                            <option>Electronics</option>
+                            <option>Fashion</option>
+                            <option>Home & Garden</option>
+                        </select>
+
+                        <input type="text" class="search-input" placeholder="Search here....">
+                        <button type="submit" class="search-btn d-flex align-items-center gap-2">
+                            <img src="images/search.png" width="13px" alt="">
+                            <span class="d-none d-xl-inline">Search</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Desktop Navigation Menu -->
+                <div class="desktop-nav d-none d-xl-flex align-items-center">
+                    <ul class="nav-menu me-5">
+                        <li><a href="#" class="active">Home</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Header Icons -->
+                <div class="header-icons">
+                    <a href="#" class="icon-link">
+                        <img src="images/account.png" height="24px" alt="">
+                    </a>
+                    <a href="#" class="icon-link">
+                        <i class="fas fa-shopping-cart" height="24px"></i>
+                        <span class="cart-badge">3</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                 <button class="mobile-toggle d-xl-none ms-3" type="button" onclick="toggleMobileMenu()">
+                    <span style="font-size: 30px; display: flex; align-items: center; justify-content: center;">☰</span>
+                </button>
+
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul class="nav-menu">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="">Categories</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+
+     <section class="hero-section">
+        <div class="container-fluid h-100">
+            <div class="row h-100 position-relative">
+
+                <div class="col-12">
+                    <div class="position-absolute top-0 end-0 m-3 m-md-4 me-lmd-5 pe-lmd-5" style="z-index: 10;">
+                        <div class="d-flex align-items-center gap-3 me-md-5 pe-md-5">
+                            <span class="text-white " style="font-family: 'Outfit', sans-serif; font-weight: 300; font-size: 20px;">Deliver to</span>
+                            <div class="dropdown">
+                                <div class="dropdown-button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="images/image (8).png" height="50px" class="ps-1 py-1" alt="">
+                                    <span>U.A.E</span>
+                                    <i class="fas fa-chevron-down ms-2 pe-3"></i>
+                                </div>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li><a class="dropdown-item" href="#">Dubai</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Main Content - Centered -->
+                <div class="col-12 d-flex justify-content-center ">
+                    <div class="row w-100 justify-content-center">
+                        <div class="col-12 col-md-10 col-lg-8 text-center">
+                            <!-- Main Title -->
+                            <h1 class="hero-title">
+                                Breathe in the Wild, Stay<br>
+                                in Comfort
+                            </h1>
+                            
+                            <div class="shop-button-container">
+                                <a href="#" class="shop-button">
+                                    Shop Now
+                                <div class="arrow-icon">
+                                    <img src="images/arrow-right.png" alt="">
+                                </div>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="most-popular-section">
+        <!-- <div class="container-fluid"> -->
+            <!-- Section Header -->
+            <div class="container section-header">
+                <div class="section-content">
+                    <div class="section-title">
+                        <h2>Most Popular</h2>
+                    </div>
+                    <div class="section-description">
+                        Discover efficient scrap recycling services right in your neighborhood! We're dedicated to providing convenient and reliable scrap recycling.
+                    </div>
+                </div>
+                <div class="section-action">
+                    <button class="btn view-more-btn">View More</button>
+                </div>
+            </div>
+            
+            <!-- Products Container -->
+            <div class="products-container">
+                <div class="products-scroll">
+                    <!-- Product 1 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/Rectangle 375.png" alt="Crystals & Minerals">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Crystals & Minerals</h3>
+                            <div class="brand-info">
+                                <p class="brand-name">Brand Name</p>
+                                <div class="rating">
+                                    <span class="rating-text">4.4</span>
+                                    <span class="rating-stars">★</span>
+                                </div>
+                            </div>
+                            <div class="price-info">
+                                <span class="current-price">Rs. 700</span>
+                                <span class="original-price">Rs. 1000</span>
+                                <span class="discount">(30% off)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 2 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/Rectangle 375 (1).png" alt="Geodes">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Geodes</h3>
+                            <div class="brand-info">
+                                <p class="brand-name">Brand Name</p>
+                                <div class="rating">
+                                    <span class="rating-text">4.4</span>
+                                    <span class="rating-stars">★</span>
+                                </div>
+                            </div>
+                            <div class="price-info">
+                                <span class="current-price">Rs. 700</span>
+                                <span class="original-price">Rs. 1000</span>
+                                <span class="discount">(30% off)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 3 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/Rectangle 375.png" alt="Marine collections">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Marine collections</h3>
+                            <div class="brand-info">
+                                <p class="brand-name">Brand Name</p>
+                                <div class="rating">
+                                    <span class="rating-text">4.4</span>
+                                    <span class="rating-stars">★</span>
+                                </div>
+                            </div>
+                            <div class="price-info">
+                                <span class="current-price">Rs. 700</span>
+                                <span class="original-price">Rs. 1000</span>
+                                <span class="discount">(30% off)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 4 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/Rectangle 375 (1).png" alt="Precious stone jewellery">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Precious stone jewellery</h3>
+                            <div class="brand-info">
+                                <p class="brand-name">Brand Name</p>
+                                <div class="rating">
+                                    <span class="rating-text">4.4</span>
+                                    <span class="rating-stars">★</span>
+                                </div>
+                            </div>
+                            <div class="price-info">
+                                <span class="current-price">Rs. 700</span>
+                                <span class="original-price">Rs. 1000</span>
+                                <span class="discount">(30% off)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 5 - Extra for scrolling -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/Rectangle 375.png" alt="Gemstones">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Gemstones Collection</h3>
+                            <div class="brand-info">
+                                <p class="brand-name">Brand Name</p>
+                                <div class="rating">
+                                    <span class="rating-text">4.5</span>
+                                    <span class="rating-stars">★</span>
+                                </div>
+                            </div>
+                            <div class="price-info">
+                                <span class="current-price">Rs. 850</span>
+                                <span class="original-price">Rs. 1200</span>
+                                <span class="discount">(29% off)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 6 - Extra for scrolling -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/Rectangle 375 (1).png" alt="Rare Stones">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Rare Stone Collection</h3>
+                            <div class="brand-info">
+                                <p class="brand-name">Brand Name</p>
+                                <div class="rating">
+                                    <span class="rating-text">4.6</span>
+                                    <span class="rating-stars">★</span>
+                                </div>
+                            </div>
+                            <div class="price-info">
+                                <span class="current-price">Rs. 950</span>
+                                <span class="original-price">Rs. 1300</span>
+                                <span class="discount">(27% off)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Demo Content -->
+    <div class="container-fluid p-5" style="background: #f8f9fa; min-height: 500px;">
+        <div class="text-center">
+            <h2 class="mb-4" style="color: #5fb3b3;">Welcome to Toobah</h2>
+            <p class="lead">Your responsive e-commerce header is ready!</p>
+            <p>Try resizing the window to see the mobile responsive design in action.</p>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <section class="showcase-section mb-5">
+        <div class="container">
+            <!-- Section Title -->
+            <div class="section-title">
+                <h2>Explore handpicked collections that<br>celebrate <span class="highlight-text">Earth's natural </span>beauty</h2>
+            </div>
+            
+            <!-- Product Grid -->
+            <div class="product-grid">
+                <div class="row justify-content-center">
+                    <!-- Product 1 -->
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                        <div class="product-item">
+                            <div class="product-image">
+                                <img src="images/image (10).png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 2 -->
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                        <div class="product-item">
+                            <div class="product-image">
+                                <img src="images/image (9).png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 3 -->
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                        <div class="product-item">
+                            <div class="product-image">
+                                <img src="images/image (10).png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 4 -->
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                        <div class="product-item">
+                            <div class="product-image">
+                                <img src="images/image (11).png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- View More Button -->
+            <div class="btn-container">
+                <button class="btn view-more-btn">View More</button>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <section class="testimonials mb-5 mt-4">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 testimonial-head text-center mb-5 ">
+                    <h1>Get to Know What Our <br> Clients Think</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                <div class="carousel-inner">
+                    <!-- Slide 1 -->
+                    <div class="carousel-item active">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="testimonial-card">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="testimonial-text">
+                                        "I found the copywriting tool to be incredibly helpful in streamlining my writing process. It saved me time and helped me come up with more compelling copy."
+                                    </div>
+                                    <div class="client-info">
+                                        <div class="client-avatar"><img src="images/Ellipse 827.png" alt=""></div>
+                                        <div class="client-details">
+                                            <h5>Mikaily Garayev</h5>
+                                            <p>Product Designer</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="testimonial-card featured">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="testimonial-text">
+                                        "I found the copywriting tool to be incredibly helpful in streamlining my writing process. It saved me time and helped me come up with more compelling copy."
+                                    </div>
+                                    <div class="client-info">
+                                        <div class="client-avatar"><img src="images/Ellipse 827.png" alt=""></div>
+                                        <div class="client-details">
+                                            <h5>Mikaily Garayev</h5>
+                                            <p>Product Designer</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="testimonial-card">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="testimonial-text">
+                                        "Using the copywriting ai tool helped me improve my writing skills by showing me where I could improve and offering suggestions for how to do it."
+                                    </div>
+                                    <div class="client-info">
+                                        <div class="client-avatar"><img src="images/Ellipse 827.png" alt=""></div>
+                                        <div class="client-details">
+                                            <h5>Mikaily Garayev</h5>
+                                            <p>UX Designer</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 2 -->
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="testimonial-card featured">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="testimonial-text">
+                                        "The AI-powered suggestions have transformed my content creation workflow. I can now produce high-quality copy in half the time."
+                                    </div>
+                                    <div class="client-info">
+                                        <div class="client-avatar"><img src="images/Ellipse 827.png" alt=""></div>
+                                        <div class="client-details">
+                                            <h5>Sarah Johnson</h5>
+                                            <p>Content Strategist</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="testimonial-card">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="testimonial-text">
+                                        "Exceptional tool for creative professionals. The interface is intuitive and the results are consistently impressive."
+                                    </div>
+                                    <div class="client-info">
+                                        <div class="client-avatar"><img src="images/Ellipse 827.png" alt=""></div>
+                                        <div class="client-details">
+                                            <h5>David Miller</h5>
+                                            <p>Marketing Director</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="testimonial-card">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="testimonial-text">
+                                        "A game-changer for our marketing team. The quality of generated content exceeded our expectations completely."
+                                    </div>
+                                    <div class="client-info">
+                                        <div class="client-avatar"><img src="images/Ellipse 827.png" alt=""></div>
+                                        <div class="client-details">
+                                            <h5>Emily Rodriguez</h5>
+                                            <p>Brand Manager</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Carousel Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                
+                <!-- Carousel Indicators -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"></button>
+                </div>
+            </div>
+            </div>
+            
+        </div>
+    </section>
+
+
+
+
+<footer class="text-light pt-5 pb-3 px-5 footer mt-5">
+  <div class="container">
+  <div class="row text-white text-center text-md-start py-5 justify-content-center">
+    
+    <!-- Column 1: Logo + Text + Icons -->
+    <div class="col-12 col-md-6 col-lg-3 mb-4 mx-auto">
+      <img src="images/Toobah_Logo 1.png" alt="Logo" class="mb-2" style="width: 100px;">
+      <p class="small">Whatever you want to ask, our chat has the answers</p>
+      <div class="d-flex justify-content-center justify-content-md-start gap-3 mt-2 social">
+        <a href="#"><i class="fab fa-twitter "></i></a>
+        <a href="#"><i class="fab fa-facebook "></i></a>
+        <a href="#"><i class="fab fa-linkedin "></i></a>
+      </div>
+    </div>
+
+    <!-- Column 2 -->
+    <div class="col-6 col-md-3 col-lg-2 mb-4 footer-column">
+      <h6 class="fw-bold">Support</h6>
+      <ul class="list-unstyled small">
+        <li><a href="#" class=" text-decoration-none">Weekly Demos</a></li>
+        <li><a href="#" class=" text-decoration-none">Contact Us</a></li>
+        <li><a href="#" class=" text-decoration-none">Report a Bug</a></li>
+        <li><a href="#" class=" text-decoration-none">Request a Feature</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 3 -->
+    <div class="col-6 col-md-3 col-lg-2 mb-4 footer-column">
+      <h6 class="fw-bold">About</h6>
+      <ul class="list-unstyled small">
+        <li><a href="#" class=" text-decoration-none">Donate</a></li>
+        <li><a href="#" class=" text-decoration-none">Careers</a></li>
+        <li><a href="#" class=" text-decoration-none">Blog</a></li>
+        <li><a href="#" class=" text-decoration-none">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 4 -->
+    <div class="col-6 col-md-3 col-lg-2 mb-4 footer-column">
+      <h6 class="fw-bold">Help</h6>
+      <ul class="list-unstyled small">
+        <li><a href="#" class=" text-decoration-none">Help Center</a></li>
+        <li><a href="#" class=" text-decoration-none">Information</a></li>
+        <li><a href="#" class=" text-decoration-none">Community</a></li>
+        <li><a href="#" class=" text-decoration-none">Creator Programme</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 5 -->
+    <div class="col-6 col-md-3 col-lg-2 mb-4 footer-column">
+      <h6 class="fw-bold">Product</h6>
+      <ul class="list-unstyled small">
+        <li><a href="#" class=" text-decoration-none">Chat by EcoScrop</a></li>
+        <li><a href="#" class=" text-decoration-none">EcoScrop API</a></li>
+        <li><a href="#" class=" text-decoration-none">Reviews</a></li>
+        <li><a href="#" class=" text-decoration-none">Pricing</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Bottom text -->
+  <div class="text-center border-top pt-3 pb-2 text-white small">
+    © All Right Reserved
+  </div>
+</div>
+
+
+  </div>
+</footer>
+
+
+
+
+
+
+
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('show');
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const toggleButton = document.querySelector('.mobile-toggle');
+            
+            if (!mobileMenu.contains(event.target) && !toggleButton.contains(event.target)) {
+                mobileMenu.classList.remove('show');
+            }
+        });
+    </script>
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
