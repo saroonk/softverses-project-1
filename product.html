@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crystals & Minerals - Product Detail</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="product.css">
+
+
+</head>
+<body>
+
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="product-container">
+            <div class="row g-0">
+                <!-- Image Gallery -->
+                <div class="col-lg-7">
+                    <div class="image-gallery">
+                        <div class="row">
+                            <!-- Thumbnail Navigation (Desktop) -->
+                            <div class="col-2 d-none d-md-block">
+                                <div class="thumbnail-container" id="thumbnailContainer">
+                                    <button class="thumbnail-nav" id="thumbUpBtn">
+                                        <i class="fas fa-chevron-up"></i>
+                                    </button>
+
+                                            <img src="images/image (11).png" class="thumbnail" onclick="changeMainImage(this.src)">
+                                            <img src="images/image (10).png" class="thumbnail" onclick="changeMainImage(this.src)">
+                                            <img src="images/Frame 1000011385.png" class="thumbnail" onclick="changeMainImage(this.src)">
+                     
+                                    <button class="thumbnail-nav" id="thumbDownBtn">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Main Image -->
+                            <div class="col-md-10 col-12">
+                                <div class="main-image-container">
+                                    <button class="carousel-nav carousel-prev" id="prevBtn">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </button>
+                                    <img src="https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=800&h=600&fit=crop" 
+                                         class="main-image" id="mainImage" alt="Main crystal image">
+                                    <button class="carousel-nav carousel-next" id="nextBtn">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </button>
+                                </div>
+
+<div class="mobile-thumbnails d-md-none position-relative justify-content-center" style="display: flex; align-items: center; gap: 10px; position: relative;">
+<button class="mobile-nav left" id="rightimg">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+    <div id="mobileThumbnailsWrapper">
+        <img src="images/image (11).png" class="thumbnail" onclick="changeMainImage(this.src)">
+        <img src="images/image (10).png" class="thumbnail" onclick="changeMainImage(this.src)">
+        <img src="images/Frame 1000011385.png" class="thumbnail" onclick="changeMainImage(this.src)">
+        <img src="images/image (11).png" class="thumbnail" onclick="changeMainImage(this.src)">
+        <img src="images/image (10).png" class="thumbnail" onclick="changeMainImage(this.src)">
+        <img src="images/Frame 1000011385.png" class="thumbnail" onclick="changeMainImage(this.src)">
+        <img src="images/image (11).png" class="thumbnail" onclick="changeMainImage(this.src)">
+        <img src="images/image (10).png" class="thumbnail" onclick="changeMainImage(this.src)">
+        <img src="images/Frame 1000011385.png" class="thumbnail" onclick="changeMainImage(this.src)">
+        <img src="images/image (11).png" class="thumbnail" onclick="changeMainImage(this.src)">
+        <img src="images/image (10).png" class="thumbnail" onclick="changeMainImage(this.src)">
+        <img src="images/Frame 1000011385.png" class="thumbnail" onclick="changeMainImage(this.src)">
+        
+    </div>
+
+    <button class="mobile-nav right" id="leftimg">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+</div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="col-lg-5">
+                    <div class="product-info">
+                        <h1 class="product-title">Crystals & Minerals</h1>
+                        
+                        <div class="rating-section">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">3.5</span>
+                            <span class="rating-text">120 comments</span>
+                            <span class="stock-badge">IN STOCK</span>
+                        </div>
+
+                        <div class="price">$75.00</div>
+
+                        
+
+                        <div class="quantity-section">
+                            <div class="section-title">Quantity</div>
+                            <div class="quantity-controls">
+                                <button class="qty-btn" id="decreaseBtn">-</button>
+                                <input type="number" class="qty-input" id="qtyInput" value="1" min="1">
+                                <button class="qty-btn" id="increaseBtn">+</button>
+                                
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center mb-3">
+                            <button class="add-to-cart-btn">Add to cart</button>
+                            <button class="wishlist-btn">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+
+
+                        <div class="shipping-info">
+                            <i class="fas fa-truck"></i> FREE SHIPPING ON ORDERS $100+
+                        </div>
+
+                        <div class="share-section">
+                            <div class="section-title">Share this:</div>
+                            <div class="social-links">
+                                <a href="#" class="social-link facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="social-link twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="social-link instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="social-link linkedin">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <section class="similar-products mt-5 pt-5">
+
+        <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-12">
+        <h2 class="section-title">Similar Products</h2>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid similar-products-section">
+        
+        <div class="products-container">
+            <div class="products-scroll-wrapper" id="productsScrollWrapper">
+                <div class="products-row" id="productsRow">
+                    <!-- Product Card 1 -->
+                    <div class="product-card" >
+                        <div class="product-image-container">
+                            <img src="images/Rectangle 25.png" alt="Crystal Shell Art" class="product-image">
+                            <button class="wishlist-btn" >
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-info d-flex justify-content-between align-items-center">
+
+                            <div class="price-left">
+                                <div class="product-category">Crystals & Minerals</div>
+                                <div class="product-brand">Priya's Brand</div>
+                            </div>
+
+
+                            <div class="product-price">$13.00</div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 2 -->
+                    <div class="product-card" >
+                        <div class="product-image-container">
+                            <img src="images/Frame 1000011384.png" alt="Seashell Collection" class="product-image">
+                            <button class="wishlist-btn" >
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-info d-flex justify-content-between align-items-center">
+                            
+                            <div class="price-left">
+                                <div class="product-category">Crystals & Minerals</div>
+                                <div class="product-brand">Roboto's Brand</div>
+                            </div>
+
+
+                            <div class="product-price">$127.00</div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 3 -->
+                    <div class="product-card" >
+                        <div class="product-image-container">
+                            <img src="images/Frame 1000011385.png" alt="Colorful Shell Art" class="product-image">
+                            <button class="wishlist-btn" >
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-info d-flex justify-content-between align-items-center">
+                           
+
+                            
+                            <div class="price-left">
+                                <div class="product-category">Crystals & Minerals</div>
+                                <div class="product-brand">Jhanvi's Brand</div>
+                            </div>
+
+
+                            <div class="product-price">$133.00</div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 4 -->
+                    <div class="product-card" >
+                        <div class="product-image-container">
+                            <img src="images/Frame 1000011653.png" alt="Ocean Shell Display" class="product-image">
+                            <button class="wishlist-btn" >
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-info d-flex justify-content-between align-items-center">
+    
+
+                            <div class="price-left">
+                                <div class="product-category">Crystals & Minerals</div>
+                                <div class="product-brand">Sagar's Brand</div>
+                            </div>
+
+
+                            <div class="product-price">$79.00</div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 5 -->
+                    <div class="product-card" >
+                        <div class="product-image-container">
+                            <img src="images/image (11).png" alt="Natural Shell Collection" class="product-image">
+                            <button class="wishlist-btn" >
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-info d-flex justify-content-between align-items-center">
+        
+
+
+                            <div class="price-left">
+                                <div class="product-category">Crystals & Minerals</div>
+                                <div class="product-brand">Roboto's Brand</div>
+                            </div>
+
+
+                            <div class="product-price">$127.00</div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 6 -->
+                    <div class="product-card" >
+                        <div class="product-image-container">
+                            <img src="images/image (8).png" alt="Mineral Art Piece" class="product-image">
+                            <button class="wishlist-btn" >
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-info d-flex justify-content-between align-items-center">
+                 
+
+
+                            <div class="price-left">
+                                <div class="product-category">Crystals & Minerals</div>
+                                <div class="product-brand">Jhanvi's Brand</div>
+                            </div>
+
+
+                            <div class="product-price">$143.00</div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 7 -->
+                    <div class="product-card" >
+                        <div class="product-image-container">
+                            <img src="images/image (12).png" alt="Crystal Display" class="product-image">
+                            <button class="wishlist-btn" >
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="product-info d-flex justify-content-between align-items-center">
+
+
+                            <div class="price-left">
+                                <div class="product-category">Crystals & Minerals</div>
+                                <div class="product-brand">Priya's Brand</div>
+                            </div>
+
+
+                            <div class="product-price">$189.00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <section class="most-popular-section">
+        <!-- <div class="container-fluid"> -->
+            <!-- Section Header -->
+            <div class="container section-header">
+                <div class="section-content">
+                    <div class="section-title">
+                        <h2>Most Popular</h2>
+                    </div>
+                    <div class="section-description">
+                        Discover efficient scrap recycling services right in your neighborhood! We're dedicated to providing convenient and reliable scrap recycling.
+                    </div>
+                </div>
+                <div class="section-action">
+                    <button class="btn view-more-btn">View More</button>
+                </div>
+            </div>
+
+            <div class="products-container">
+                <div class="products-scroll">
+                  
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/Rectangle 375.png" alt="Crystals & Minerals">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Crystals & Minerals</h3>
+                            <div class="brand-info">
+                                <p class="brand-name">Brand Name</p>
+                                <div class="rating">
+                                    <span class="rating-text">4.4</span>
+                                    <span class="rating-stars">★</span>
+                                </div>
+                            </div>
+                            <div class="price-info">
+                                <span class="current-price">Rs. 700</span>
+                                <span class="original-price">Rs. 1000</span>
+                                <span class="discount">(30% off)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/Rectangle 375 (1).png" alt="Geodes">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Geodes</h3>
+                            <div class="brand-info">
+                                <p class="brand-name">Brand Name</p>
+                                <div class="rating">
+                                    <span class="rating-text">4.4</span>
+                                    <span class="rating-stars">★</span>
+                                </div>
+                            </div>
+                            <div class="price-info">
+                                <span class="current-price">Rs. 700</span>
+                                <span class="original-price">Rs. 1000</span>
+                                <span class="discount">(30% off)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/Rectangle 375.png" alt="Marine collections">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Marine collections</h3>
+                            <div class="brand-info">
+                                <p class="brand-name">Brand Name</p>
+                                <div class="rating">
+                                    <span class="rating-text">4.4</span>
+                                    <span class="rating-stars">★</span>
+                                </div>
+                            </div>
+                            <div class="price-info">
+                                <span class="current-price">Rs. 700</span>
+                                <span class="original-price">Rs. 1000</span>
+                                <span class="discount">(30% off)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/Rectangle 375 (1).png" alt="Precious stone jewellery">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Precious stone jewellery</h3>
+                            <div class="brand-info">
+                                <p class="brand-name">Brand Name</p>
+                                <div class="rating">
+                                    <span class="rating-text">4.4</span>
+                                    <span class="rating-stars">★</span>
+                                </div>
+                            </div>
+                            <div class="price-info">
+                                <span class="current-price">Rs. 700</span>
+                                <span class="original-price">Rs. 1000</span>
+                                <span class="discount">(30% off)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/Rectangle 375.png" alt="Gemstones">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Gemstones Collection</h3>
+                            <div class="brand-info">
+                                <p class="brand-name">Brand Name</p>
+                                <div class="rating">
+                                    <span class="rating-text">4.5</span>
+                                    <span class="rating-stars">★</span>
+                                </div>
+                            </div>
+                            <div class="price-info">
+                                <span class="current-price">Rs. 850</span>
+                                <span class="original-price">Rs. 1200</span>
+                                <span class="discount">(29% off)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                   
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/Rectangle 375 (1).png" alt="Rare Stones">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Rare Stone Collection</h3>
+                            <div class="brand-info">
+                                <p class="brand-name">Brand Name</p>
+                                <div class="rating">
+                                    <span class="rating-text">4.6</span>
+                                    <span class="rating-stars">★</span>
+                                </div>
+                            </div>
+                            <div class="price-info">
+                                <span class="current-price">Rs. 950</span>
+                                <span class="original-price">Rs. 1300</span>
+                                <span class="discount">(27% off)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+     
+
+                const mainImage = document.getElementById('mainImage');
+                const thumbnails = document.querySelectorAll('.thumbnail');
+                const prevBtn = document.getElementById('prevBtn');
+                const nextBtn = document.getElementById('nextBtn');
+                const thumbUpBtn = document.getElementById('thumbUpBtn');
+                const thumbDownBtn = document.getElementById('thumbDownBtn');
+                const qtyInput = document.getElementById('qtyInput');
+                const decreaseBtn = document.getElementById('decreaseBtn');
+                const increaseBtn = document.getElementById('increaseBtn');
+                const wishlistBtn = document.getElementById('wishlistBtn');
+                const colorOptions = document.querySelectorAll('.color-option');
+                const rightimg = document.getElementById('rightimg');
+                const leftimg = document.getElementById('leftimg');
+                const thumbnailWrapper = document.getElementById('mobileThumbnailsWrapper');
+
+                // Keep track of current index
+                let currentImageIndex = 0;
+
+                // Function to change main image and update active class
+                function changeMainImage(src, index) {
+                    mainImage.src = src;
+                    currentImageIndex = index;
+
+                    thumbnails.forEach((thumb, i) => {
+                        thumb.classList.toggle('active', i === index);
+                    });
+                }
+
+                // Thumbnail click handler
+                thumbnails.forEach((thumb, index) => {
+                    thumb.addEventListener('click', () => {
+                        changeMainImage(thumb.src, index);
+                    });
+                });
+
+                // Navigation buttons for main image
+                prevBtn.addEventListener('click', () => {
+                    currentImageIndex = (currentImageIndex > 0) ? currentImageIndex - 1 : thumbnails.length - 1;
+                    changeMainImage(thumbnails[currentImageIndex].src, currentImageIndex);
+                });
+
+                nextBtn.addEventListener('click', () => {
+                    currentImageIndex = (currentImageIndex < thumbnails.length - 1) ? currentImageIndex + 1 : 0;
+                    changeMainImage(thumbnails[currentImageIndex].src, currentImageIndex);
+                });
+
+                // Up/down thumbnail buttons (same as next/prev)
+                thumbUpBtn.addEventListener('click', () => {
+                    currentImageIndex = (currentImageIndex > 0) ? currentImageIndex - 1 : thumbnails.length - 1;
+                    changeMainImage(thumbnails[currentImageIndex].src, currentImageIndex);
+                });
+
+                thumbDownBtn.addEventListener('click', () => {
+                    currentImageIndex = (currentImageIndex < thumbnails.length - 1) ? currentImageIndex + 1 : 0;
+                    changeMainImage(thumbnails[currentImageIndex].src, currentImageIndex);
+                });
+
+                // Scroll-only thumbnail buttons
+                rightimg.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    thumbnailWrapper.scrollBy({ left: -100, behavior: 'smooth' });
+                });
+
+                leftimg.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    thumbnailWrapper.scrollBy({ left: 100, behavior: 'smooth' });
+                });
+
+                // Quantity input controls
+                decreaseBtn.addEventListener('click', () => {
+                    const currentValue = parseInt(qtyInput.value);
+                    if (currentValue > 1) {
+                        qtyInput.value = currentValue - 1;
+                    }
+                });
+
+                increaseBtn.addEventListener('click', () => {
+                    const currentValue = parseInt(qtyInput.value);
+                    qtyInput.value = currentValue + 1;
+                });
+
+
+        // // Wishlist toggle
+        // wishlistBtn.addEventListener('click', () => {
+        //     const icon = wishlistBtn.querySelector('i');
+        //     if (icon.classList.contains('far')) {
+        //         icon.classList.remove('far');
+        //         icon.classList.add('fas');
+        //         wishlistBtn.style.color = '#e74c3c';
+        //     } else {
+        //         icon.classList.remove('fas');
+        //         icon.classList.add('far');
+        //         wishlistBtn.style.color = '';
+        //     }
+        // });
+
+
+
+
+
+    
+
+
+
+
+
+    </script>
+</body>
+</html>
