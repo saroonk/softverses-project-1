@@ -67,10 +67,10 @@
         .product-container .thumbnail-container {
     display: flex;
     flex-direction: column;
-    align-items: center;     /* ✅ Center horizontally */
-    justify-content: center; /* ✅ Center vertically */
+    align-items: center;     
+    justify-content: center; 
     gap: 16px;
-    height: 100%;            /* Allow it to use all vertical space */
+    height: 100%;            
 }
         
 
@@ -139,7 +139,7 @@
         }
 
         .product-container .rating-text {
-            color: var(--text-light);
+            color:#807D7E;
             font-size: 0.95rem;
         }
 
@@ -346,13 +346,13 @@
     overflow-x: auto;
     gap: 10px;
     scroll-behavior: smooth;
-    padding: 10px 40px; /* give space so buttons don't overlap thumbnails */
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;     /* Firefox */
+    padding: 10px 40px; 
+    -ms-overflow-style: none;  
+    scrollbar-width: none;     
 }
 
 .product-container #mobileThumbnailsWrapper::-webkit-scrollbar {
-    display: none; /* Chrome, Safari and Opera */
+    display: none; 
 }
 .product-container .thumbnail {
     width: 60px;
@@ -405,7 +405,6 @@
             border-radius: 10px;
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
             .product-container .main-image-container {
                 height: 350px;
@@ -449,7 +448,7 @@
             }
         }
 
-        /* Custom scrollbar for thumbnail container */
+
         .product-container .thumbnail-container::-webkit-scrollbar {
             width: 6px;
         }
@@ -513,7 +512,7 @@
         }
 
         .similar-products .products-scroll-wrapper::-webkit-scrollbar {
-            display: none;             /* Chrome, Safari, Opera */
+            display: none;            
         }
 
         /* .products-scroll-wrapper::-webkit-scrollbar {
@@ -647,7 +646,7 @@
             border-radius: 10px;
         }
 
-        /* Responsive Design */
+   
         @media (max-width: 768px) {
             .similar-products .section-title {
                 font-size: 2rem;
@@ -755,7 +754,7 @@
     position: relative;
     overflow: hidden;
     padding-left: 15px;
-    margin-left: 100px;
+    margin-left: 10px;
     /* font-family: 'Libre Baskerville', serif; */
 }
 
@@ -949,5 +948,19 @@
     .most-popular-section .section-title h2 {
         font-size: 1.6rem;
     }
+
+
+    .most-popular-section .view-more-btn {
+    background: #529892;
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    margin: 0px;
+}
 }
 

@@ -20,15 +20,12 @@
 <body>
 
 
-    <!-- Main Content -->
     <div class="container">
         <div class="product-container">
             <div class="row g-0">
-                <!-- Image Gallery -->
                 <div class="col-lg-7">
                     <div class="image-gallery">
                         <div class="row">
-                            <!-- Thumbnail Navigation (Desktop) -->
                             <div class="col-2 d-none d-md-block">
                                 <div class="thumbnail-container" id="thumbnailContainer">
                                     <button class="thumbnail-nav" id="thumbUpBtn">
@@ -45,7 +42,6 @@
                                 </div>
                             </div>
 
-                            <!-- Main Image -->
                             <div class="col-md-10 col-12">
                                 <div class="main-image-container">
                                     <button class="carousel-nav carousel-prev" id="prevBtn">
@@ -89,23 +85,28 @@
                     </div>
                 </div>
 
-                <!-- Product Info -->
-                <div class="col-lg-5">
+                <div class="col-lg-5 ">
                     <div class="product-info">
                         <h1 class="product-title">Crystals & Minerals</h1>
                         
-                        <div class="rating-section">
-                            <div class="stars">
+                        <div class="rating-section d-xl-flex d-block">
+                            <div class="stars mb-2">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
+                                <span class="rating-text ps-2">3.5</span>
+
                             </div>
-                            <span class="rating-text">3.5</span>
-                            <span class="rating-text">120 comments</span>
+
+                            <div class="rating-right">
+                            <span class="rating-text"><img src="images/Icon.png" alt="" class="pe-2">120 comments</span>
                             <span class="stock-badge">IN STOCK</span>
                         </div>
+                            
+                        </div>
+
 
                         <div class="price">$75.00</div>
 
@@ -140,7 +141,7 @@
                                     <i class="fab fa-facebook-f"></i>
                                 </a>
                                 <a href="#" class="social-link twitter">
-                                    <i class="fab fa-twitter"></i>
+                                    <i class="fab fa-whatsapp"></i>
                                 </a>
                                 <a href="#" class="social-link instagram">
                                     <i class="fab fa-instagram"></i>
@@ -174,7 +175,7 @@
 
 
 
-        <section class="similar-products mt-5 pt-5">
+    <section class="similar-products mt-5 pt-5">
 
         <div class="container">
         <div class="row">
@@ -190,7 +191,6 @@
         <div class="products-container">
             <div class="products-scroll-wrapper" id="productsScrollWrapper">
                 <div class="products-row" id="productsRow">
-                    <!-- Product Card 1 -->
                     <div class="product-card" >
                         <div class="product-image-container">
                             <img src="images/Rectangle 25.png" alt="Crystal Shell Art" class="product-image">
@@ -210,7 +210,6 @@
                         </div>
                     </div>
 
-                    <!-- Product Card 2 -->
                     <div class="product-card" >
                         <div class="product-image-container">
                             <img src="images/Frame 1000011384.png" alt="Seashell Collection" class="product-image">
@@ -230,7 +229,6 @@
                         </div>
                     </div>
 
-                    <!-- Product Card 3 -->
                     <div class="product-card" >
                         <div class="product-image-container">
                             <img src="images/Frame 1000011385.png" alt="Colorful Shell Art" class="product-image">
@@ -252,7 +250,6 @@
                         </div>
                     </div>
 
-                    <!-- Product Card 4 -->
                     <div class="product-card" >
                         <div class="product-image-container">
                             <img src="images/Frame 1000011653.png" alt="Ocean Shell Display" class="product-image">
@@ -273,7 +270,6 @@
                         </div>
                     </div>
 
-                    <!-- Product Card 5 -->
                     <div class="product-card" >
                         <div class="product-image-container">
                             <img src="images/image (11).png" alt="Natural Shell Collection" class="product-image">
@@ -295,7 +291,7 @@
                         </div>
                     </div>
 
-                    <!-- Product Card 6 -->
+                  
                     <div class="product-card" >
                         <div class="product-image-container">
                             <img src="images/image (8).png" alt="Mineral Art Piece" class="product-image">
@@ -317,7 +313,6 @@
                         </div>
                     </div>
 
-                    <!-- Product Card 7 -->
                     <div class="product-card" >
                         <div class="product-image-container">
                             <img src="images/image (12).png" alt="Crystal Display" class="product-image">
@@ -361,9 +356,9 @@
                     <div class="section-title">
                         <h2>Most Popular</h2>
                     </div>
-                    <div class="section-description">
+                    <!-- <div class="section-description">
                         Discover efficient scrap recycling services right in your neighborhood! We're dedicated to providing convenient and reliable scrap recycling.
-                    </div>
+                    </div> -->
                 </div>
                 <div class="section-action">
                     <button class="btn view-more-btn">View More</button>
@@ -535,10 +530,9 @@
                 const leftimg = document.getElementById('leftimg');
                 const thumbnailWrapper = document.getElementById('mobileThumbnailsWrapper');
 
-                // Keep track of current index
                 let currentImageIndex = 0;
 
-                // Function to change main image and update active class
+               
                 function changeMainImage(src, index) {
                     mainImage.src = src;
                     currentImageIndex = index;
@@ -548,14 +542,14 @@
                     });
                 }
 
-                // Thumbnail click handler
+               
                 thumbnails.forEach((thumb, index) => {
                     thumb.addEventListener('click', () => {
                         changeMainImage(thumb.src, index);
                     });
                 });
 
-                // Navigation buttons for main image
+                
                 prevBtn.addEventListener('click', () => {
                     currentImageIndex = (currentImageIndex > 0) ? currentImageIndex - 1 : thumbnails.length - 1;
                     changeMainImage(thumbnails[currentImageIndex].src, currentImageIndex);
@@ -566,7 +560,6 @@
                     changeMainImage(thumbnails[currentImageIndex].src, currentImageIndex);
                 });
 
-                // Up/down thumbnail buttons (same as next/prev)
                 thumbUpBtn.addEventListener('click', () => {
                     currentImageIndex = (currentImageIndex > 0) ? currentImageIndex - 1 : thumbnails.length - 1;
                     changeMainImage(thumbnails[currentImageIndex].src, currentImageIndex);
@@ -577,7 +570,7 @@
                     changeMainImage(thumbnails[currentImageIndex].src, currentImageIndex);
                 });
 
-                // Scroll-only thumbnail buttons
+                
                 rightimg.addEventListener('click', (e) => {
                     e.stopPropagation();
                     thumbnailWrapper.scrollBy({ left: -100, behavior: 'smooth' });
@@ -588,7 +581,6 @@
                     thumbnailWrapper.scrollBy({ left: 100, behavior: 'smooth' });
                 });
 
-                // Quantity input controls
                 decreaseBtn.addEventListener('click', () => {
                     const currentValue = parseInt(qtyInput.value);
                     if (currentValue > 1) {
