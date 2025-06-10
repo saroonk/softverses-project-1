@@ -24,6 +24,16 @@
 
 
 
+        .top-content {
+    position: fixed;    
+    top: 0;           
+    left: 0;          
+    right: 0;         
+    z-index: 100;     
+    width: 100%;      
+   
+}
+
 
 
 
@@ -475,7 +485,7 @@
         .cart-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding-top: 15rem;
         }
 
         .cart-header {
@@ -654,10 +664,26 @@
             font-size: 0.9rem;
         }
 
+
+        @media (max-width:580px){
+            .cart-container{
+                padding-top: 9rem;
+            }
+        }
+
+
+        @media (max-width:1200px){
+            .cart-container {
+                padding-right: 3rem;
+                padding-left: 3rem;
+            }
+        }
+
       
         @media (max-width: 768px) {
             .cart-container {
-                padding: 15px;
+                padding-right: 3rem;
+                padding-left: 3rem;
             }
 
             .desktop-view {

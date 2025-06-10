@@ -11,6 +11,14 @@
 
 
 
+        .top-content {
+    position: fixed;   
+    top: 0;           
+    left: 0;          
+    right: 0;         
+    z-index: 100;     
+    width: 100%;      
+}
 
 
 .top-content .top-header {
@@ -481,7 +489,7 @@
 
 
         .blog-section {
-            padding: 80px 0;
+            padding: 14rem 0;
             font-family: 'Arial', sans-serif;
             /* background: linear-gradient(135deg, #f8fffe 0%, #e8f6f5 100%); */
             color: #333;
@@ -831,6 +839,10 @@
         }
 
         @media (max-width: 575px) {
+
+            .blog-section{
+                padding-top: 9rem;
+            }
             .blog-section .section-title {
                 font-size: 1.8rem;
             }

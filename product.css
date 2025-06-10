@@ -9,6 +9,16 @@
             /* overflow-y: hidden; */
             /* outline: 1px solid red;  */
         }
+
+
+        .top-content {
+    position: fixed;    /* NEW */
+    top: 0;            /* NEW */
+    left: 0;           /* NEW */
+    right: 0;          /* NEW */
+    z-index: 100;      /* NEW */
+    width: 100%;       /* NEW */
+}
         .top-content .top-header {
             background: #529892;
             color: white;
@@ -456,6 +466,8 @@
             
             overflow: hidden;
             margin-bottom: 30px;
+            /* margin-top: 150px; */
+            padding-top: 15rem;
         }
 
         .product-container .image-gallery {
@@ -909,6 +921,10 @@
         }
 
         @media (max-width: 576px) {
+
+            .product-container{
+                padding-top: 8rem;
+            }
             .product-container .main-image-container {
                 height: 280px;
             }
