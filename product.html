@@ -22,14 +22,21 @@
 <body>
 
 
+<!-- 
+    <a href="https://wa.me/yourphonenumber" class="whatspp-icon" target="_blank">
+  <i class="fab fa-whatsapp" style="font-size: 40px; color: white;"></i>
+</a> -->
 
 
 
-<section class="top-content mb-5">
+
+
+
+<section class="top-content">
         <div class="top-header ">
         <div class="container ">
             <div class="shipping-info">
-                <img src="images/truck.png" height="30px" width="30px" alt="">
+                <img src="images/truck.png"  alt="">
                 <span>Free Shipping and Free Return</span>
             </div>
             <div class="header-right">
@@ -100,7 +107,11 @@
 
                 <div class="header-icons">
                     <a href="#" class="icon-link">
-                        <img src="images/account.png" height="24px" alt="">
+                        <!-- <img src="images/account.png" height="24px" alt=""> -->
+                         <!-- <i class="bi bi-person" ></i> -->
+                          <i class="fa-solid fa-user"></i>
+                          
+
                     </a>
                     <a href="#" class="icon-link">
                         <i class="fas fa-shopping-cart" height="24px"></i>
@@ -159,7 +170,7 @@
                             </div>
 
                             <div class="col-md-10 col-12">
-                                <div class="main-image-container">
+                                <div class="main-image-container ">
                                     <button class="carousel-nav carousel-prev" id="prevBtn">
                                         <i class="fas fa-chevron-left"></i>
                                     </button>
@@ -754,15 +765,25 @@
 
                 let currentImageIndex = 0;
 
-               
-                function changeMainImage(src, index) {
-                    mainImage.src = src;
-                    currentImageIndex = index;
-
-                    thumbnails.forEach((thumb, i) => {
-                        thumb.classList.toggle('active', i === index);
-                    });
-                }
+               // Modify the changeMainImage function
+function changeMainImage(src, index) {
+    const mainImage = document.getElementById('mainImage');
+    
+    // Start fade out
+    mainImage.classList.add('fade-out');
+    
+    // After fade completes, change image and fade in
+    setTimeout(() => {
+        mainImage.src = src;
+        mainImage.classList.remove('fade-out');
+        currentImageIndex = index;
+        
+        // Update active thumbnail
+        thumbnails.forEach((thumb, i) => {
+            thumb.classList.toggle('active', i === index);
+        });
+    }, 300);
+}
 
                
                 thumbnails.forEach((thumb, index) => {

@@ -376,26 +376,48 @@
         }
 
         @media (max-width: 576px) {
+
+
+            .top-content .search-container {
+           
+            flex: 1;
+            max-width: 300px;
+        }
             .top-content .logo { 
-                width: 35px;
+                width: 55px;
                 
              }
 
+
+
+
+            .top-content .shipping-info span {
+                margin: 0px;
+            font-size: 8px;
+        }
+
+        .top-content .shipping-info img {
+                margin: 0px;
+                height: 13px;
+        }
+/* 
             .top-content .search-container {
                 margin: 0 10px;
-            }
+            } */
 
             .top-content .language-currency {
                 gap: 5px;
             }
 
-            /* .language-currency span {
-                display: none;
-            } */
 
 
             .top-content .header-icons {
                 gap: 5px;
+            }
+
+            
+            .top-content .main-nav .header-icons  {
+                gap: 15px;
             }
 
             .top-content .header-right img{
@@ -406,6 +428,11 @@
 
             width: 100px;
      
+        }
+
+
+        .top-content .header-right .phone-number span{
+            font-size: 9px;
         }
         }
 
@@ -782,12 +809,15 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: transform 0.3s ease;
+            transition:  0.7s ease;
             border: 1px solid #e9ecef;
         }
         
         .testimonial-card:hover {
-            transform: translateY(-5px);
+            /* transform: translateY(-5px); */
+            background: #1A9C91;
+            color: white;
+
         }
 
         .testimonial-card.featured:hover {
@@ -1761,3 +1791,27 @@
         border-radius: 15px !important;
     }
 }
+
+
+
+
+
+
+
+
+
+    .whatspp-icon{
+    position: fixed; 
+    right: 20px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    width: 80px; 
+    height: 80px; 
+    background-color: #25D366; 
+    border-radius: 50%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    z-index: 1000;
+    text-decoration: none;
+  } 

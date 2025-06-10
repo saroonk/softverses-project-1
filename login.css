@@ -79,6 +79,10 @@
             position: relative;
         }
 
+        .password-group {
+            position: relative;
+        }
+
         label {
             display: block;
             margin-bottom: 8px;
@@ -88,7 +92,8 @@
         }
 
         input[type="email"],
-        input[type="password"] {
+        input[type="password"],
+        input[type="text"] {
             width: 100%;
             padding: 14px 16px;
             border: 2px solid #e2e8f0;
@@ -97,6 +102,11 @@
             transition: all 0.3s ease;
             background: white;
             outline: none;
+        }
+
+        input[type="password"],
+        #password {
+            padding-right: 50px;
         }
 
         input:focus {
@@ -108,8 +118,32 @@
         input:valid {
             border-color: #48bb78;
         }
+        
         input::placeholder{
             color: rgb(192, 189, 189);
+        }
+
+        .eye-toggle {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #718096;
+            font-size: 18px;
+            padding: 0;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.3s ease;
+        }
+
+        .eye-toggle:hover {
+            color: #529892;
         }
 
         .forgot-password {
@@ -162,7 +196,6 @@
             position: relative;
             overflow: hidden;
             margin-bottom: 1rem;
-
         }
 
         .login-btn:hover {

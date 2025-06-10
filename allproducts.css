@@ -1,3 +1,14 @@
+
+                        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* overflow-y: hidden; */
+            /* outline: 1px solid red;  */
+        }
+
+
+
 body {
             font-family: 'Poppins', sans-serif;
             background-color: white;
@@ -369,27 +380,49 @@ body {
             }
         }
 
-        @media (max-width: 576px) {
+         @media (max-width: 576px) {
+
+
+            .top-content .search-container {
+           
+            flex: 1;
+            max-width: 300px;
+        }
             .top-content .logo { 
-                width: 35px;
+                width: 55px;
                 
              }
 
+
+
+
+            .top-content .shipping-info span {
+                margin: 0px;
+            font-size: 8px;
+        }
+
+        .top-content .shipping-info img {
+                margin: 0px;
+                height: 13px;
+        }
+/* 
             .top-content .search-container {
                 margin: 0 10px;
-            }
+            } */
 
             .top-content .language-currency {
                 gap: 5px;
             }
 
-            /* .language-currency span {
-                display: none;
-            } */
 
 
             .top-content .header-icons {
                 gap: 5px;
+            }
+
+            
+            .top-content .main-nav .header-icons  {
+                gap: 15px;
             }
 
             .top-content .header-right img{
@@ -401,7 +434,13 @@ body {
             width: 100px;
      
         }
+
+
+        .top-content .header-right .phone-number span{
+            font-size: 9px;
         }
+        }
+
 
 
 
@@ -676,3 +715,22 @@ body {
   .footer-column a:hover {
     color: #fdfcfb; 
   }
+
+
+
+
+    .whatspp-icon{
+    position: fixed; 
+    right: 20px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    width: 80px; 
+    height: 80px; 
+    background-color: #25D366; 
+    border-radius: 50%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    z-index: 1000;
+    text-decoration: none;
+  } 
