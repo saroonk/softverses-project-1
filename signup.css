@@ -62,6 +62,10 @@
             position: relative;
         }
 
+        .password-group {
+            position: relative;
+        }
+
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -90,15 +94,21 @@
             outline: none;
         }
 
+        input[type="password"],
+        #password,
+        #confirmPassword {
+            padding-right: 50px;
+        }
+
         input:focus {
             border-color: #529892;
             box-shadow: 0 0 0 3px rgba(82, 152, 146, 0.1);
             transform: translateY(-2px);
         }
 
-        input:valid {
+        /* input:valid {
             border-color: #48bb78;
-        }
+        } */
 
         .checkbox-group {
             display: flex;
@@ -153,6 +163,36 @@
 
         .signup-btn:active {
             transform: translateY(0);
+        }
+
+        .eye-toggle {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #718096;
+            font-size: 18px;
+            padding: 0;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .eye-toggle.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .eye-toggle:hover {
+            color: #529892;
         }
 
         .divider {

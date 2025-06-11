@@ -115,9 +115,9 @@
             transform: translateY(-2px);
         }
 
-        input:valid {
+        /* input:valid {
             border-color: #48bb78;
-        }
+        } */
         
         input::placeholder{
             color: rgb(192, 189, 189);
@@ -139,7 +139,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .eye-toggle.show {
+            opacity: 1;
+            visibility: visible;
         }
 
         .eye-toggle:hover {
