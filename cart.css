@@ -502,11 +502,12 @@
         }
 
         .quantity-input {
-            width: 80px;
+            width: 40px;
             text-align: center;
             border: 1px solid var(--border-color);
             border-radius: 4px;
             padding: 8px;
+            height: 30px;
         }
 
         .btn-remove {
@@ -515,7 +516,7 @@
             color: #6c757d;
             padding: 8px 16px;
             border-radius: 4px;
-            font-size: 0.9rem;
+            font-size: 0.7rem;
             transition: all 0.3s;
         }
 
@@ -586,11 +587,16 @@
         .mobile-edit-form {
             display: none;
             background: var(--light-gray);
-            padding: 15px;
+            padding: 10px;
             border-radius: 6px;
             margin-top: 15px;
             border: 1px solid var(--border-color);
         }
+
+        .mobile-edit-form span{
+            font-size: 14px;
+        }
+
 
         .mobile-edit-form.show {
             display: block;
@@ -627,7 +633,7 @@
             color: white;
             padding: 8px 16px;
             border-radius: 4px;
-            font-size: 0.9rem;
+            font-size: 0.7rem;
         }
 
 
@@ -680,6 +686,9 @@
             .mobile-buttons .btn {
                 font-size: 0.9rem;
                 padding: 10px 20px;
+            }
+            .product-name{
+                font-size: 14px;
             }
         }
 
